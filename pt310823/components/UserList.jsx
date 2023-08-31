@@ -22,7 +22,7 @@ const UserList = () => {
     return(
         <>
         <ul key={elementoActual.id}>
-            <li>{elementoActual.name} {elementoActual.email} <UserModal></UserModal></li>
+            <li>{elementoActual.name} {elementoActual.email} <UserModal datosUsuario={elementoActual}></UserModal></li>
         </ul>
         </>
     )

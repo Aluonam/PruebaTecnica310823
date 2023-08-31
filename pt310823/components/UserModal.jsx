@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
 
-const UserModal = () => {
+const UserModal = ({datosUsuario}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -17,10 +17,11 @@ const UserModal = () => {
       <Button type="primary" onClick={showModal}>
         Detalles
       </Button>
-      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+      <Modal title={datosUsuario.name} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <p>{datosUsuario.username}</p>
+        <p>{datosUsuario.address.street}</p>
+        <p>{datosUsuario.phone}</p>
+        <button onClick={()=>{handleCancel()}}></button>
       </Modal>
     </>
   );
