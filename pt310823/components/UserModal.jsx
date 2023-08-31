@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
+import UserInfo from './UserInfo';
 
 const UserModal = ({datosUsuario}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,10 +19,7 @@ const UserModal = ({datosUsuario}) => {
         Detalles
       </Button>
       <Modal title={datosUsuario.name} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>{datosUsuario.username}</p>
-        <p>{datosUsuario.address.street}</p>
-        <p>{datosUsuario.phone}</p>
-        <button onClick={()=>{handleCancel()}}></button>
+        <UserInfo datosUsuario={datosUsuario} ></UserInfo>
       </Modal>
     </>
   );
