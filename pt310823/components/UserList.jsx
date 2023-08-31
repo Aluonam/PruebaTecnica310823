@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import UserModal from './UserModal'
 
 
 const UserList = () => {
@@ -21,7 +22,7 @@ const UserList = () => {
     return(
         <>
         <ul key={elementoActual.id}>
-            <li>{elementoActual.name} {elementoActual.email}</li>
+            <li>{elementoActual.name} {elementoActual.email} <UserModal></UserModal></li>
         </ul>
         </>
     )
